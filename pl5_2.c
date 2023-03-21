@@ -62,11 +62,8 @@ int main(int argc, char *argv[]) {
         erro("Connect");
     write(fd, capital, 1 + strlen(capital));
 
-
     /* done */
-
-
-
+    
     close(fd);
     exit(0);
 }

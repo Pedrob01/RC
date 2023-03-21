@@ -38,7 +38,7 @@ int main(void)
     {
 	    erro("Error in bind");
     }
-
+    //if we wanted to keep the socket open, we would need to use a loop here that ends before the close(s) statement.
     // Waits for an incoming message 
     if((recv_len = recvfrom(s, buf, BUFLEN, 0, 
        (struct sockaddr *) &si_other, &slen)) == -1)
@@ -50,7 +50,7 @@ int main(void)
 	    
     printf("I received a message from the system with address %s and port %d\n",
 	inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
-    printf("The message conten is: %s\n" , buf);
+    printf("The message content is: %s\n" , buf);
 
     // Closes socket and ends program
     close(s);
